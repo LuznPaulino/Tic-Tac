@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://0fbq0cfsblfa"]
+[gd_scene load_steps=5 format=3 uid="uid://0fbq0cfsblfa"]
 
 [ext_resource type="Script" uid="uid://brx13bn2eooq5" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dpcle5eh63wae" path="res://Scenes/board.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bjb7r78qoptlg" path="res://Scenes/circle.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://xgl256dase5m" path="res://Scenes/cross.tscn" id="3_kry3j"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bo1nx")
+circleScene = ExtResource("2_jjvhh")
+crossScene = ExtResource("3_kry3j")
 
 [node name="Board" parent="." instance=ExtResource("1_jjgbg")]
 position = Vector2(300, 300)
