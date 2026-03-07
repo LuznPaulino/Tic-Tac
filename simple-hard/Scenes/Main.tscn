@@ -1,9 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://0fbq0cfsblfa"]
+[gd_scene load_steps=7 format=3 uid="uid://0fbq0cfsblfa"]
 
 [ext_resource type="Script" uid="uid://brx13bn2eooq5" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dpcle5eh63wae" path="res://Scenes/board.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://bjb7r78qoptlg" path="res://Scenes/circle.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://xgl256dase5m" path="res://Scenes/cross.tscn" id="3_kry3j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
+bg_color = Color(0.91764706, 0.023529412, 0.39607844, 1)
+border_width_left = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.89411765, 0.92941177, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bo1nx")
@@ -12,3 +31,29 @@ crossScene = ExtResource("3_kry3j")
 
 [node name="Board" parent="." instance=ExtResource("1_jjgbg")]
 position = Vector2(300, 300)
+
+[node name="SidePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 600)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjvhh")
+
+[node name="PlayerLabel" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 120.0
+offset_right = 900.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 46
+text = "Next Player"
+horizontal_alignment = 1
+
+[node name="PlayerPanel" type="Panel" parent="."]
+offset_left = 648.0
+offset_top = 200.0
+offset_right = 848.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kry3j")
