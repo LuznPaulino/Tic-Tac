@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 window/size/viewport_width=900
 window/size/viewport_height=600
 
+[global_group]
+
+circles=""
+crosses=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
